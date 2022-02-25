@@ -1,0 +1,125 @@
+@charset "ISO-8859-1";
+
+
+
+body{
+    margin: 3vw 10vw;
+    padding: 0;
+    font-size: 1.5vw;
+    color: rgb(5, 5, 5);
+    background-color: white;
+    text-align: center;
+}
+
+h1{
+	color: DarkCyan;
+}
+
+h3{
+	text-align: left;
+	margin: 1vw 24vw;
+}
+
+header{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+table{
+	margin: 0 auto;
+}
+
+th, td{
+    padding: 0.4vw;
+    text-align: center;
+    border-bottom: 0.1vw solid rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+th{
+    color: white;
+    font-size: 1.8vw;
+    background-color: rgb(35, 35, 35);
+}
+
+th:hover{
+    background-color: rgb(15, 15, 15);
+}
+
+td:hover{
+    background-color: rgb(220, 220, 220);
+}
+
+.link{
+	color: DodgerBlue;
+	background-color: transparent;
+	border: none;
+    padding: 0 2vw;
+    margin:0;
+    font-size: 1.2vw;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.link:hover{
+	color: RoyalBlue;
+}
+
+.submit{
+	color: white;
+	background-color: rgb(35, 35, 35);
+	border: none;
+    padding: 15px 150px;
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.submit:hover{
+	background-color:rgb(15, 15, 15);
+}
+
+.error{
+	color: DarkRed;
+}
+
+main{
+	margin-top: 2vw;
+}
+
+div{
+	margin: 1vw 27vw;
+	text-align: left;
+}
+
+p{
+	margin: 0;
+}
+
+.row{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding:0,
+}
+
+.delete{
+	color: white;
+	background-color: DarkRed;
+	border: none;
+    padding: 5px 25px;
+    margin: 0;
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.delete:hover{
+	background-color: Maroon;
+}
+
+.justify{
+	display: flex;
+    justify-content: space-between;
+}
