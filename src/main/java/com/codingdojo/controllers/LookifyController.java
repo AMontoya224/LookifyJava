@@ -55,20 +55,21 @@ private final LookifyService lookifyService;
 	//REVISAR
 	@RequestMapping( value="/search/topTen", method=RequestMethod.GET )
 	public String top( @Valid @ModelAttribute("lookify") Lookify lookify, BindingResult result, Model model ) {
-		List<Lookify> lookifyList = lookifyService.selectAllFromLookify();
-		ArrayList<Lookify> lookifyOrderList = new ArrayList<Lookify>();
-		long order = 0;
-		for( int i=0; i<lookifyList.size(); i++ ) {
-			if( lookifyList.get(i).getRating() > order ) {
-				lookifyOrderList.add(i, lookifyList.get(i));
+		List<Lookify> lookifyList = new ArrayList<>(); 
+		outerloop:
+		for( long i=10; i>=1; i-- ) {
+			List<Lookify> lookifyListRating = lookifyService.selectFromLookifyWhereRating(i);
+			if( lookifyListRating != null ) {
+				for( int j=0; j<lookifyListRating.size(); j++ ) {
+					lookifyList.add(lookifyListRating.get(j));
+					if( lookifyList.size() >= 10 ) {
+						break outerloop;
+					}
+				}
 			}
-			else {
-				lookifyOrderList.add(lookifyList.get(i));
-			}
-			order = lookifyList.get(i).getRating();
 		}
 		
-		model.addAttribute( "lookifyOrderList", lookifyOrderList );
+		model.addAttribute( "lookifyList", lookifyList );
 		return "top.jsp";
 	}
 	

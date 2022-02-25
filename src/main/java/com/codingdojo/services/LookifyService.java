@@ -49,6 +49,14 @@ public class LookifyService {
 		return lookifyList;
 	}
 	
+	public List<Lookify> selectFromLookifyWhereRating( long rating ){
+		List<Lookify> lookifyList = lookifyRepository.findByRating(rating);
+		if ( lookifyList.isEmpty() ) {
+			return null;
+		}
+		return lookifyList;
+	}
+	
 	public void updateLookify( Lookify lookify ) {
 		lookifyRepository.save(lookify);
 	}

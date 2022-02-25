@@ -20,6 +20,8 @@ public interface LookifyRepository extends CrudRepository<Lookify, Long> {
 	
 	List<Lookify> findByArtist( String artist );
 	
+	List<Lookify> findByRating( long rating );
+	
 	@Transactional
 	void deleteByid( int id );
 }

@@ -9,7 +9,7 @@
 		<title>
 			Search
 		</title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/style2.css">
 	</head>
 	<body>
 		<header>
@@ -24,7 +24,7 @@
 		</header>
 		<table>
         	<tbody>
-				<c:forEach var="lookify" items="${lookifyOrderList}">
+				<c:forEach var="lookify" items="${lookifyList}">
 					<tr>
 						<td><c:out value="${lookify.getRating()}"/></td>
                     	<td>
